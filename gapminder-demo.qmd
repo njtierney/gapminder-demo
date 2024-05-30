@@ -1,0 +1,87 @@
+---
+title: "Exploring gapminder"
+author: "Your Name"
+format: 
+  html:
+    fig-align: "center"
+    fig-width: 4
+    fig-height: 4
+    fig-format: png
+execute: 
+  echo: true
+  cache: false
+---
+
+```{r}
+#| label: library
+#| echo: true
+#| message: false
+library(tidyverse)
+library(broom)
+library(knitr)
+```
+
+# Introduction
+
+Let's look at the gaminder data
+
+```{r}
+#| label: data-read-in
+gapminder <- read_csv(here::here("data","gapminder.csv"))
+gapminder_oz <- gapminder |> filter(country == "Australia")
+```
+
+let's look at the lifespan
+
+```{r}
+#| label: hist-life-exp
+hist(gapminder$lifeExp)
+```
+
+Let's fit a simple linear model of the effect of year on life expectancy
+
+```{r}
+#| label: example-lm
+fit <- lm(lifeExp ~ year, data = gapminder)
+fit
+```
+
+And let's look at the coefficient table:
+
+```{r}
+#| label: coef-table
+fit_coef <- tidy(fit)
+knitr::kable(fit_coef,
+             caption = "A table of the coefficients")
+year_slope <- round(fit_coef$estimate[2], 3)
+```
+
+The effect of year on life expectancy is `r year_slope`.
+
+# A table of the coefficients is:
+
+```{r}
+#| label: table-coef
+knitr::kable(fit_coef)
+```
+
+```{r}
+#| label: gg-oz-plot
+#| fig-cap: Life expectancy from 1952 - 2007 for Australia. Life expentancy increases
+#|   steadily except from 1962 to 1969. We can safely say that our life expectancy is
+#|   higher than it has ever been!
+library(ggplot2)
+library(dplyr)
+gapminder %>%
+  filter(country == "Australia") %>%
+  ggplot(aes(x = year,
+             y = lifeExp)) + 
+  geom_point()
+```
+
+Australia's life expectancy has increased a great deal over the past 50 years
+
+(See Figure \@ref(fig:gg-oz-plot))
+
+# References
+
