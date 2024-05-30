@@ -14,7 +14,7 @@ library(broom)
 ```{r}
 #| label: data-read-in
 #| message: false
-data <- read_csv(here::here("data/gapminder_oz.csv"))
+data <- read_csv(here::here("data/gapminder.csv"))
 ```
 
 # Introduction

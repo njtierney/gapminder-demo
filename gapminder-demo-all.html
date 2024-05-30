@@ -58,16 +58,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="gapminder-demo_files/libs/clipboard/clipboard.min.js"></script>
-<script src="gapminder-demo_files/libs/quarto-html/quarto.js"></script>
-<script src="gapminder-demo_files/libs/quarto-html/popper.min.js"></script>
-<script src="gapminder-demo_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="gapminder-demo_files/libs/quarto-html/anchor.min.js"></script>
-<link href="gapminder-demo_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="gapminder-demo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="gapminder-demo_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="gapminder-demo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="gapminder-demo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="gapminder-demo-all_files/libs/clipboard/clipboard.min.js"></script>
+<script src="gapminder-demo-all_files/libs/quarto-html/quarto.js"></script>
+<script src="gapminder-demo-all_files/libs/quarto-html/popper.min.js"></script>
+<script src="gapminder-demo-all_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="gapminder-demo-all_files/libs/quarto-html/anchor.min.js"></script>
+<link href="gapminder-demo-all_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="gapminder-demo-all_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="gapminder-demo-all_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="gapminder-demo-all_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="gapminder-demo-all_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/gapminder_oz.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/gapminder.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="gapminder-demo_files/figure-html/hist-life-exp-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="gapminder-demo-all_files/figure-html/hist-life-exp-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -134,7 +134,7 @@ lm(formula = lifeExp ~ year, data = data)
 
 Coefficients:
 (Intercept)         year  
-  -376.1163       0.2277  </code></pre>
+  -585.6522       0.3259  </code></pre>
 </div>
 </div>
 <p>And let’s look at the coefficient table:</p>
@@ -158,23 +158,23 @@ Coefficients:
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-376.1162984</td>
-<td style="text-align: right;">20.5471585</td>
-<td style="text-align: right;">-18.30503</td>
+<td style="text-align: right;">-585.6521874</td>
+<td style="text-align: right;">32.3139645</td>
+<td style="text-align: right;">-18.12381</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">year</td>
-<td style="text-align: right;">0.2277238</td>
-<td style="text-align: right;">0.0103796</td>
-<td style="text-align: right;">21.93960</td>
+<td style="text-align: right;">0.3259038</td>
+<td style="text-align: right;">0.0163237</td>
+<td style="text-align: right;">19.96509</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>The effect of year on life expectancy is 0.2277238.</p>
+<p>The effect of year on life expectancy is 0.3259038.</p>
 </section>
 
 </main>
